@@ -121,6 +121,9 @@ class Game:
         pygame.display.update()
 
     def scoreboard_screen(self):
+        keys = pygame.key.get_pressed()
         self.surface.fill((0,0,0))
         self.scoreboard.draw()
         pygame.display.update()
+        if keys[pygame.K_RETURN]:
+            self.is_running = False
